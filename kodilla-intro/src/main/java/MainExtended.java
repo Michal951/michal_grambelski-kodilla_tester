@@ -6,11 +6,11 @@ public class MainExtended {
          boolean ILikeBooks = true;
          double heighs = 1.79;
          int myYearOfBirth = 1995;
-         System.out.println("My name is " + myName);
-        System.out.println("I am from " + myCity);
-        System.out.println("I have a " + numberOfMyGuitars + " guitars");
-        System.out.println("I like reading books? " + ILikeBooks);
-        System.out.println(" My heigh is " + heighs);
-        System.out.println("I was born in " + myYearOfBirth);
+         System.out.println("Nazywam się " + myName);
+        System.out.println("Pochodzę z" + myCity);
+        System.out.println("Posiadam" + numberOfMyGuitars + " guitary");
+        System.out.println("Czy lubię czytać książki? " + ILikeBooks);
+        System.out.println(" Mam " + heighs + "cm" + " wzrostu");
+        System.out.println("Urodziłem się w " + myYearOfBirth + " roku");
     }
 }
