@@ -1,11 +1,19 @@
 public class RandomNumbers {
-    public static void main(String[] args) {
-        for(int i=30; i<5000; i++) {
-            System.out.println(i);
-
+    public int getCountOfRandomNumber(int max) {
+        RandomNumbers random = new RandomNumbers();
+        int result = 30;
+        int sum = 0;
+        while (sum > max) {
+            int temp = random.int();
+            sum = sum + temp;
+            result++;
         }
-    }
+        return result;
+        }
 }
+
+
+
 
 
 
