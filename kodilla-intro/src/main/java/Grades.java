@@ -16,11 +16,11 @@ public class Grades {
     }
 
     public int returnLastElement() {
-        System.out.println();
         return this.grades[this.size - 1];
     }
-    public int getAverage() {
 
+
+    public int getAverage() {
         return getAverage();
     }
 }
