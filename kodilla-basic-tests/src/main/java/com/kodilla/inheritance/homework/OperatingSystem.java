@@ -1,16 +1,27 @@
 package com.kodilla.inheritance.homework;
 
 public class OperatingSystem {
-    public OperatingSystem() {
+    private int year;
+
+    public OperatingSystem(int year) {
+        this.year = year;
+    }
+
+
+    public void turnOn() {
+        System.out.println("Welcome");
 
     }
-    public void turnOn() {
-        System.out.println("System is turned on");
-    }
+
     public void turnOff() {
-        System.out.println("Lights is turned off");
+        System.out.println("Goodbye");
     }
-    public void getyearOfRealise() {
-        System.out.println(2012);;
+
+    public int yearOfPublishment() {
+        return year;
+    }
+
+    public void displayYearOfPublishment() {
+        System.out.println("Year of publishment: " + year);
     }
 }
