@@ -19,11 +19,14 @@ public class Grades {
         return this.grades[this.size - 1];
     }
 
+    public double gradesAverage (int[] grades) {
+        int sum = 0;
+        double average;
 
-    public int getAverage() {
-        return getAverage();
+        for (int i = 0; i < grades.length; i++) {
+            sum = sum + grades[i];
+        }
+        average = sum / grades.length;
+        return average;
     }
-}
-
-
-
+    }
