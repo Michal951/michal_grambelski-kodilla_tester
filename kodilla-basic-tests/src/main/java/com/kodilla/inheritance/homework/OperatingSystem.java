@@ -17,10 +17,6 @@ public class OperatingSystem {
         System.out.println("Goodbye");
     }
 
-    public int yearOfPublishment() {
-        return year;
-    }
-
     public void displayYearOfPublishment() {
         System.out.println("Year of publishment: " + year);
     }

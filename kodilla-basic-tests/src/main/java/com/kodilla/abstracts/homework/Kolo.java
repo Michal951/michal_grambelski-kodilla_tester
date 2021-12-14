@@ -1,15 +1,16 @@
 package com.kodilla.abstracts.homework;
 
-public class Kolo extends Shape{
+public class Kolo extends Shape {
     static double PI = 3.14;
-public double r;
+    public double r;
+
     @Override
     double Pole() {
-        return PI*r;
+        return PI * r * r;
     }
 
     @Override
     double Obwod() {
-        return 2* PI * r;
+        return 2 * PI * r;
     }
 }

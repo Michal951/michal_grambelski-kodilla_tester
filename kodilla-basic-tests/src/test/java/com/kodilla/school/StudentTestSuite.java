@@ -1,6 +1,9 @@
 package com.kodilla.school;
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class StudentTestSuite {
     @Test
     public void shouldCalculateCorrectAveragesIfValuesAreInRange() {
@@ -46,6 +49,7 @@ public class StudentTestSuite {
         assertEquals(0, mathsAverage, 0.01);
         assertEquals(3, physicsAverage, 0.01);
     }
+
     @Test
     public void averageShouldBeZeroIfStudentDontHaveGrades() {
         Student student = new Student("Martin");
@@ -72,4 +76,4 @@ public class StudentTestSuite {
         student.addPhysicsGrade(3);
         assertEquals(2.375, student.getAverage(), 0.001);
     }
-    }
+}

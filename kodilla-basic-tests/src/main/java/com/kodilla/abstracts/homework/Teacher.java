@@ -1,13 +1,7 @@
 package com.kodilla.abstracts.homework;
 
-public class Teacher extends Job {
-    @Override
-    double Salary() {
-        return 0;
-    }
-
-    @Override
-    String Responsibilites() {
-        return "Conducting lessons, checking tests, taking care of students.";
+public class Teacher extends Job{
+    public Teacher(int salary, String responsibilities) {
+        super(1500, "Prowadzenie zajęć");
     }
 }

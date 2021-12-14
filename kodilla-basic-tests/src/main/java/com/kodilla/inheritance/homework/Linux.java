@@ -1,7 +1,7 @@
 package com.kodilla.inheritance.homework;
 
-public class Windows extends OperatingSystem {
-    public Windows(int year) {
+public class Linux extends OperatingSystem {
+    public Linux(int year) {
         super(year);
     }
 

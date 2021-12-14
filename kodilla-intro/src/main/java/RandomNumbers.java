@@ -16,19 +16,24 @@ public class RandomNumbers {
             sum += temp;
             System.out.println(temp);
             System.out.println(sum);
+            System.out.println("max " + max);
+            System.out.println("min " + min);
+            getMax(temp);
+            getMin(temp);
         }
     }
-        static int getMax ( int number){
-            if (number > max) {
-                max = number;
-            }
-            return max;
-        }
 
-        static int getMin ( int number){
-            if (number < min) {
-                min = number;
-            }
-            return min;
+    static int getMax(int number) {
+        if (number > max) {
+            max = number;
         }
+        return max;
     }
+
+    static int getMin(int number) {
+        if (number < min) {
+            min = number;
+        }
+        return min;
+    }
+}

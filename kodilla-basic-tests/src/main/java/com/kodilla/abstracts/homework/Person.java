@@ -1,12 +1,25 @@
 package com.kodilla.abstracts.homework;
 
-public abstract class Person extends Job {
-    String name = "Kamil";      //1
-    int age = 23;               //2
-    String job = "Teacher";     //3
+public class Person  {
 
-        @Override
-        String Responsibilites(){
-            return "Teaching, checking tests, taking care of students.";
-        }
+    public String firstName;
+    public int age;
+    public Job job;
+
+    public Person(String firstName, int age, Job job) {
+        this.firstName = firstName;
+        this.age = age;
+        this.job = job;
     }
+
+    public static void main(String[] args) {
+       Job cashier = new Cashier(1000,"Sprzedaż produktów");
+       Job teacher = new Teacher(1500, "Prowadzenie zajęć");
+
+       Person Ewa = new Person("Ewa",24,cashier);
+       Person Karolina = new Person("Karolina",23,teacher);
+
+        System.out.println(Ewa.job.showResponsibilities());
+        System.out.println(Karolina.job.showResponsibilities());
+    }
+}

@@ -23,7 +23,7 @@ public class Application {
         kolo.Obwod();
         kolo.Pole();
         kolo.r = 3;
-        kolo.PI = 3.14;
+       kolo.PI = 3.14;
         System.out.println("Pole kola = " + kolo.Pole());
         System.out.println("Obwod kola = " + kolo.Obwod());
 

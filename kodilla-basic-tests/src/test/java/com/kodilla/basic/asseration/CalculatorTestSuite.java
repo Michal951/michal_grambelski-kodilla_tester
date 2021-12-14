@@ -14,12 +14,13 @@ public class CalculatorTestSuite {
         int sumResult = calculator.sum(a, b);
         assertEquals(13, sumResult);
     }
+
     @Test
     public void testSubtract() {
         Calculator calculator = new Calculator();
         int a = 5;
         int b = 8;
-        int subtractResult = calculator.subtract(a,b);
+        int subtractResult = calculator.subtract(a, b);
         assertEquals(-3, subtractResult);
     }
 }
