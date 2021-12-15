@@ -23,4 +23,19 @@ public class CalculatorTestSuite {
         int subtractResult = calculator.subtract(a, b);
         assertEquals(-3, subtractResult);
     }
+    @Test
+    public void testPow() {
+
+        Calculator calculator = new Calculator();
+
+        int powResult1 = calculator.pow(3, 2);
+        int powResult2 = calculator.pow(3, 0);
+        int powResult3 = calculator.pow(-3, 2);
+
+
+        assertEquals(9, powResult1);
+        assertEquals(1, powResult2);
+        assertEquals(9, powResult3);
+
+    }
 }

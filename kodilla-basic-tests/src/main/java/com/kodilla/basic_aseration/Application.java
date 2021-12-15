@@ -6,7 +6,7 @@ public class Application {
         int a = 5;
         int b = 8;
         int c = 3;
-        int d = 9;
+        int d = 2;
 
         int sumResult = calculator.sum(a, b);
         int subtractResult = calculator.subtract(a, b);
