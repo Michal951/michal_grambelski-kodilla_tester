@@ -10,6 +10,6 @@ public class Calculator {
     }
 
     public int pow(int c, int d) {
-        return c = d;
+        return (int) Math.pow(c, d);
     }
 }

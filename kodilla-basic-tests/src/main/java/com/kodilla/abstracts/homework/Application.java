@@ -2,30 +2,19 @@ package com.kodilla.abstracts.homework;
 
 public class Application {
     public static void main(String[] args) {
-        Kwadrat kwadrat = new Kwadrat();
-        kwadrat.Obwod();
-        kwadrat.Pole();
-        kwadrat.a = 5;
-        System.out.println("Pole kwadratu = " + kwadrat.Pole());
-        System.out.println("Obwód kwadratu = " + kwadrat.Obwod());
+       Square square = new Square(10);
+        System.out.println("Pole kwadratu = " + square.getArea());
+        System.out.println("Obwód kwadratu = " + square.getPerimiter());
 
 
-        Prostokat prostokat = new Prostokat();
-        prostokat.Obwod();
-        prostokat.Pole();
-        prostokat.a = 5;
-        prostokat.b = 3;
-        System.out.println("Pole prostokatu = " + prostokat.Pole());
-        System.out.println("Obwod prostokatu = " + prostokat.Obwod());
+        Rectangle rectangle = new Rectangle(5,10);
+        System.out.println("Pole prostokatu = " + rectangle.getArea());
+        System.out.println("Obwod prostokatu = " + rectangle.getPerimiter());
 
 
-        Kolo kolo = new Kolo();
-        kolo.Obwod();
-        kolo.Pole();
-        kolo.r = 3;
-       kolo.PI = 3.14;
-        System.out.println("Pole kola = " + kolo.Pole());
-        System.out.println("Obwod kola = " + kolo.Obwod());
+        Circle circle = new Circle(6);
+        System.out.println("Pole kola = " + circle.getArea());
+        System.out.println("Obwod kola = " + circle.getPerimiter());
 
     }
 }

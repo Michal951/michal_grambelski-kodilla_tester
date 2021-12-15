@@ -1,16 +1,19 @@
 package com.kodilla.abstracts.homework;
 
-public class Kwadrat extends Shape {
+public class Square extends Shape {
 
     public double a;
 
+    public Square(double a) {
+        this.a = a;
+    }
     @Override
-    double Pole() {
+    double getArea() {
         return a * a;
     }
 
     @Override
-    double Obwod() {
+    double getPerimiter() {
         return 4 * a;
     }
 }
