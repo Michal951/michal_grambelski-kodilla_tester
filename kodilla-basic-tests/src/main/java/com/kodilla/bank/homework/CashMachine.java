@@ -6,9 +6,11 @@ public class CashMachine {
     public int cashWithdrawal;
     public int deposit;
 
-    public CashMachine() {
+    public CashMachine(int transactions, int size, int cashWithdrawal, int deposit) {
         this.transactions = new int[0];
         this.size = 0;
+        this.cashWithdrawal = cashWithdrawal;
+        this.deposit = deposit;
     }
 
     public void addTransactions(int transactions);{

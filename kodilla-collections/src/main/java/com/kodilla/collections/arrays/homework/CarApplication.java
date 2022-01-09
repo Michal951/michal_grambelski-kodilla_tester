@@ -11,9 +11,19 @@ import java.util.Random;
 public class CarApplication {
 
     private static Object Car;
+    private static Opel opel;
+    private static Ford ford;
+    private static Nissan nissan;
 
     public static void main(String[] args) {
-        Car[] cars = new Car[15];
+        Random random = new Random();
+        int size = random.nextInt(15);
+
+        if (size == 0) {
+            size = 1;
+        }
+
+        Car[] cars = new Car[size];
         for (int c = 0; c < cars.length; c++)
             cars[c] = drawCar();
         for (Car car : cars)
@@ -22,16 +32,20 @@ public class CarApplication {
 
     private static Car drawCar() {
         Random random = new Random();
-        int drawnCar = random.nextInt(3);
-        int a = (int) random.nextInt(76);
-        int b = (int) random.nextInt(55);
-        int c = (int) random.nextInt(97);
+        int drawnCar = random.nextInt(2);
 
-        if (drawnCar == 0)
-            return new Opel(a);
-        else if (drawnCar == 1)
-            return new Ford(b);
-        else
-            return new Nissan(c);
+        if (drawnCar == 0) {
+            opel = new Opel();
+            opel.increaseSpeed(random.nextInt(76));
+            return opel;
+        } else if (drawnCar == 1) {
+            ford = new Ford();
+            ford.increaseSpeed(random.nextInt(55));
+            return ford;
+        } else {
+            nissan = new Nissan();
+            nissan.increaseSpeed(random.nextInt(97));
+            return nissan;
+        }
     }
 }

@@ -39,3 +39,4 @@ public class CalculatorTestSuite {
         assertEquals(9, powResult3);
     }
 }
+młodzik, gracz, biedni ludzie, białe noce

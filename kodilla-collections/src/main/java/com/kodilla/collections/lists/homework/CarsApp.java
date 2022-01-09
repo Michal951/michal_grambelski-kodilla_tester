@@ -12,9 +12,9 @@ import java.util.List;
 public class CarsApp {
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
-        Car Nissan = new Nissan(50);
-        Car Ford = new Ford(51);
-        Car Opel = new Opel(55);
+        Car Nissan = new Nissan();
+        Car Ford = new Ford();
+        Car Opel = new Opel();
 
         cars.add(Nissan);
         cars.add(Ford);
