@@ -12,6 +12,5 @@ public class BookApplication {
         System.out.println(book2.hashCode());
         System.out.println(book3.hashCode());
         System.out.println(book4.hashCode());
-
     }
 }
