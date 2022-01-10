@@ -1,27 +1,27 @@
 package com.kodilla.collections.adv.maps.homework;
 
-import com.kodilla.collections.adv.maps.complex.Student;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class School {
-    private String schoolName;
-    private List<Student> students = new ArrayList<>();
+    private List<Integer> students = new ArrayList<>();
 
-    public School(String schoolName) {
-        this.schoolName = schoolName;
-    }
-
-    public void addStudent(Student student) {
-        student.add(student);
+    public School(int... students) {
+        for (int student : students)
+            this.students.add(student);
     }
 
     @Override
     public String toString() {
         return "School{" +
-                "schoolName='" + schoolName + '\'' +
-                ", students=" + students +
+                "students=" + students +
                 '}';
+    }
+
+    public int getStudentsNumber(){
+        int sum = 0;
+        for( int student : students)
+            sum += student;
+        return sum;
     }
 }

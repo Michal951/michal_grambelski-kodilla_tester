@@ -6,6 +6,8 @@ import java.util.List;
 public class BookManager {
     private List<Book> book = new ArrayList<>();
 
-    public void createBook(String title, String author){
+    public static Book createBook(String title, String author){
+        Book book = new Book(title, author);
+        return book;
     }
 }

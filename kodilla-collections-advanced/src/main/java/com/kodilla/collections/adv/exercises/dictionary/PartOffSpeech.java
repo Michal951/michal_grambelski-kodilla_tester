@@ -6,5 +6,4 @@ public enum PartOffSpeech {
     ADVERB,
     ADJECTIVE,
     ADVERBIAL,
-
 }

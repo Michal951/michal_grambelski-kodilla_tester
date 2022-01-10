@@ -16,5 +16,4 @@ public class EnglishWord {
     public PartOffSpeech getPartOffSpeech(){
         return partOffSpeech;
     }
-
 }
