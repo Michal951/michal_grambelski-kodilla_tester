@@ -23,5 +23,9 @@ public class SchoolDirectory {
         school.put(principal3, school3);
         school.put(principal4, school4);
 
+        for (Map.Entry<Principal, School> principalEntry : school.entrySet())
+            System.out.println(principalEntry.getKey().getName() + " jest dyrektorem szkoły "
+                    + principalEntry.getKey().getSchoolName()
+                    + " o ilości uczniów " + principalEntry.getValue().getStudentsNumber());
     }
 }

@@ -18,9 +18,9 @@ public class School {
                 '}';
     }
 
-    public int getStudentsNumber(){
+    public int getStudentsNumber() {
         int sum = 0;
-        for( int student : students)
+        for (int student : students)
             sum += student;
         return sum;
     }

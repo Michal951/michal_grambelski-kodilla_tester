@@ -7,10 +7,19 @@ public class Principal {
     private String lastname;
     private String schoolName;
 
+
     public Principal(String name, String lastname, String schoolName) {
         this.name = name;
         this.lastname = lastname;
         this.schoolName = schoolName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSchoolName() {
+        return schoolName;
     }
 
     @Override
