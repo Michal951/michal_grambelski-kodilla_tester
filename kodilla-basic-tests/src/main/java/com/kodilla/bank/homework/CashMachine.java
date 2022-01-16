@@ -12,9 +12,4 @@ public class CashMachine {
         this.cashWithdrawal = cashWithdrawal;
         this.deposit = deposit;
     }
-
-    public void addTransactions(int transactions);{
-        this.size++;
-        transactions[this.size] = transactions;
-    }
 }

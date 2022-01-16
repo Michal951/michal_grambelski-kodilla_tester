@@ -5,13 +5,13 @@ import java.util.Objects;
 public class User {
     private String username;
     private int age;
-    private int numberOfPost;
+    private int numberOfPosts;
     private String group;
 
     public User(String username, int age, int numberOfPost, String group) {
         this.username = username;
         this.age = age;
-        this.numberOfPost = numberOfPost;
+        this.numberOfPosts = numberOfPost;
         this.group = group;
     }
 
@@ -27,8 +27,8 @@ public class User {
         return age;
     }
 
-    public int getNumberOfPost() {
-        return numberOfPost;
+    public int getNumberOfPosts() {
+        return numberOfPosts;
     }
 
     @Override
@@ -36,11 +36,11 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return age == user.age && numberOfPost == user.numberOfPost && username.equals(user.username) && group.equals(user.group);
+        return age == user.age && numberOfPosts == user.numberOfPosts && username.equals(user.username) && group.equals(user.group);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, age, numberOfPost, group);
+        return Objects.hash(username, age, numberOfPosts, group);
     }
 }

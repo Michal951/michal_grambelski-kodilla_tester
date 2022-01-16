@@ -19,7 +19,7 @@ public class Grades {
         return this.grades[this.size - 1];
     }
 
-    public double gradesAverage (int[] grades) {
+    public double gradesAverage(int[] grades) {
         int sum = 0;
         double average;
 
@@ -29,4 +29,4 @@ public class Grades {
         average = sum / grades.length;
         return average;
     }
-    }
+}

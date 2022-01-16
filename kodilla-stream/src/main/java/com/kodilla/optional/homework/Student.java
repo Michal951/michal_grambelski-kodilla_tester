@@ -1,8 +1,8 @@
 package com.kodilla.optional.homework;
 
 public class Student {
-private String name;
-private Teacher teacher;
+    private String name;
+    private Teacher teacher;
 
     public Student(String name, Teacher teacher) {
         this.name = name;
@@ -17,4 +17,3 @@ private Teacher teacher;
         return teacher;
     }
 }
-

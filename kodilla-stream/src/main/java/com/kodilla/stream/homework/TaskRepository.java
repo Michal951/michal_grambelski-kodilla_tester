@@ -8,8 +8,8 @@ public class TaskRepository {
     public static List<Task> getTasks() {
         List<Task> tasks = new ArrayList<>();
         LocalDate date1 = LocalDate.of(2021, 3, 17);
-        LocalDate date2 = LocalDate.of(2021, 2, 15);
-        LocalDate date3 = LocalDate.of(2021, 1, 13);
+        LocalDate date2 = LocalDate.of(2021, 2, 21);
+        LocalDate date3 = LocalDate.of(2021, 1, 5);
         LocalDate currentDate = LocalDate.now();
 
 
