@@ -11,5 +11,6 @@ public class TaskManager {
                 .filter(t -> t.getdeadline().isAfter(LocalDate.now()))
                 .map(task -> task.getdeadline())
                 .collect(Collectors.toList());
+        System.out.println(deadline);
     }
 }
