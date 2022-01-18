@@ -11,15 +11,23 @@ class FlightFinderTest {
 
     @Test
     void findFlightsFrom() {
-        //given
+
         FlightFinder finder = new FlightFinder();
         List<Flight> result = finder.findFlightsFrom("New York");
-        //when
         List<Flight> expectedList = new ArrayList<>();
         expectedList.add(new Flight("New York", "London"));
+
+        assertEquals(expectedList, result);
     }
 
     @Test
     void findFlightsTo() {
+        FlightFinder finder = new FlightFinder();
+        List<Flight> result = finder.findFlightsTo("Gdańsk");
+        List<Flight> expectedList = new ArrayList<>();
+        expectedList.add(new Flight("Dublin", "Gdańsk"));
+        expectedList.add(new Flight("Warsaw", "Gdańsk"));
+
+        assertEquals(expectedList, result);
     }
 }
