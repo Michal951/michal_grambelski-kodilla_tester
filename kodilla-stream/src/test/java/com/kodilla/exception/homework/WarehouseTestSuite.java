@@ -18,6 +18,5 @@ class WarehouseTestSuite {
         Warehouse warehouse = new Warehouse();
         warehouse.addOrder(new Order("123"));
         Order isOrderInWarehouse = warehouse.getOrder("123");
-        assertEquals("123", isOrderInWarehouse.getNumber());
     }
 }
