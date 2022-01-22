@@ -2,6 +2,7 @@ package com.kodilla.parametrized_tests.homework;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,26 +10,31 @@ class UserValidatorTest {
     private UserValidator userValidator = new UserValidator();
 
     @ParameterizedTest
-    @CsvSource(value = {"^[a-zA-Z0-9._-]{3,}$"})
-    public void falseIfUsernameShorterThanThreeLetters(String input) {
-        assertFalse(userValidator.validateUsername(input));
+    @ValueSource(strings = {"Ab", "cD", "21"})
+    public void falseIfUsernameShorterThanThreeLetters(String username) {
+        boolean result = userValidator.validateUsername(username);
+        assertFalse(result);
+
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"^[a-zA-Z0-9._-]{3,}$"})
-    public void falseIfUsernameLongerThanThreeLetters(String input) {
-        assertFalse(userValidator.validateUsername(input));
+    @ValueSource(strings = {"AAA", "Vito12", "Tony201"})
+    public void trueIfUsernameLongerThanThreeLetter(String username) {
+        boolean result = userValidator.validateUsername(username);
+        assertTrue(result);
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$"})
-    public void falseIfEmailIncorrect(String input) {
-        assertFalse(userValidator.validateEmail(input));
+    @ValueSource(strings = {"a@pl", "12@com"})
+    public void falseIfEmailIncorrect(String email) {
+        boolean result = userValidator.validateEmail(email);
+        assertFalse(result);
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$"})
-    public void trueIfEmailCorrect(String input) {
-        assertFalse(userValidator.validateEmail(input));
+    @ValueSource(strings = {"john1@wp.pl", "alfie14@onet.pk"})
+    public void trueIfEmailCorrect(String email) {
+        boolean result = userValidator.validateEmail(email);
+        assertTrue(result);
     }
 }
