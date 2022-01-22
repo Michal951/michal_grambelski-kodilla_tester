@@ -1,7 +1,6 @@
 package com.kodilla.parametrized_tests.homework;
 
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +18,7 @@ class UserValidatorTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"AAA", "Vito12", "Tony201"})
-    public void trueIfUsernameLongerOrEqualgitThreeLetter(String username) {
+    public void trueIfUsernameLongerOrEqualThreeLetter(String username) {
         boolean result = userValidator.validateUsername(username);
         assertTrue(result);
     }
