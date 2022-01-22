@@ -19,7 +19,7 @@ class UserValidatorTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"AAA", "Vito12", "Tony201"})
-    public void trueIfUsernameLongerThanThreeLetter(String username) {
+    public void trueIfUsernameLongerOrEqualgitThreeLetter(String username) {
         boolean result = userValidator.validateUsername(username);
         assertTrue(result);
     }
