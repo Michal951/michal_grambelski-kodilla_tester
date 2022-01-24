@@ -1,6 +1,7 @@
 package com.kodilla.parametrized_tests.homework;
 
 public class Person {
+
     private double heightInMeters;
     private double weightInKilogram;
 

@@ -6,5 +6,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTestSuite {
+    @ParameterizedTest
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.Person#getBMI")
 
+    public void calculateBMI(double heightInMeters, double weightInKilograms, String result) {
+        Person person = new Person(heightInMeters, weightInKilograms);
+        assertEquals(result, person.getBMI());
+    }
 }
