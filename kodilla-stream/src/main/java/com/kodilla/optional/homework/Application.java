@@ -17,14 +17,7 @@ public class Application {
         students.add(new Student("Frank ", null));
 
         for (Student student : students) {
-            Teacher nullTeacher = student.getTeacher();
-
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(nullTeacher);
-            Optional<String> optionalTeacherName = optionalTeacher.map(teacher -> teacher.getName());
-
-            String teacherName = optionalTeacherName.orElse("undefined");
-            System.out.println(student.getName() + teacherName);
-
+            System.out.println("Name of student: " + student.getName() + " and his teacher is: " + student.getTeacher().orElse(new Teacher("<undefined>")).getName());
         }
     }
 }

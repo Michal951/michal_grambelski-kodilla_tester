@@ -18,6 +18,8 @@ public class WarehouseApp {
         } catch (OrderDoesntExistException e) {
             e.printStackTrace();
             System.out.println("Order doestn exist");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
