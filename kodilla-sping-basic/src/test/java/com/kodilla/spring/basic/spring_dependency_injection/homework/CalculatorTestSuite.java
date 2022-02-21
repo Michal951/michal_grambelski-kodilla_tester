@@ -1,45 +1,44 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class CalculatorTestSuite {
-    Display display = new Display();
-    Calculator calculator = new Calculator(display);
 
     @Test
-    public void shouldReturnAddResult() {
-        double a = 3.4;
-        double b = 2.1;
-        double sumResult = calculator.add(a, b);
-        assertEquals(5.6, sumResult);
-
+    public void shouldReturnCorrectAddResult() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        Calculator bean = context.getBean(Calculator.class);
+        double value = bean.add(8,2);
+        Assertions.assertEquals(10,value);
     }
 
     @Test
-    public void shouldReturnSubResult() {
-        double a = 15.1;
-        double b = 4.5;
-        double result = calculator.subtract(a, b);
-        assertEquals(1.0, result);
+    public void shouldReturnCorrectSubResult() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        Calculator bean = context.getBean(Calculator.class);
+        double value = bean.subtract(8,2);
+        Assertions.assertEquals(6,value);
     }
 
     @Test
-    public void shouldReturnMultiplyResult() {
-        double a = 3.5;
-        double b = 10;
-        double result = calculator.multiply(a, b);
-        assertEquals(35, result);
+    public void shouldReturnCorrectMultiplyResult() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        Calculator bean = context.getBean(Calculator.class);
+        double value = bean.multiply(8,2);
+        Assertions.assertEquals(16,value);
     }
 
     @Test
-    public void shouldReturnDivResult() {
-        double a = 21.3;
-        double b = 3;
-        double result = calculator.divide(a, b);
-        assertEquals(7.1, result);
+    public void shouldReturnCorrectDivResult() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        Calculator bean = context.getBean(Calculator.class);
+        double value = bean.divide(8,2);
+        Assertions.assertEquals(4,value);
     }
 }

@@ -21,6 +21,6 @@ public class Calculator {
     }
 
     public double circlePerimeter(double r) {
-        return 2 * PI *r;
+        return 2 * PI * r;
     }
 }

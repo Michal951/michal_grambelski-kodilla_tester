@@ -1,13 +1,13 @@
 public class Loops {
     public static void main(String[] args) {
-        int[] names = new int[]{5, 6, 6, 4, 6, 1, 2};
+        String[] names = new String[]{"Geralt", "Jaskier", "Milva", "Regis", "Cahir", "Angouleme"};
         int numberOfElements = names.length;
     }
 
-    public int sumNumbers(int[] names) {
+    public int sumNumbers(String[] names) {
         int result = 0;
         for (int i = 0; i < names.length; i++) {
-            result = result + names[i];
+            result = result + names.length;
         }
         return result;
     }
