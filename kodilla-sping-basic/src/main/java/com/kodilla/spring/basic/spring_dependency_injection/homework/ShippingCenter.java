@@ -1,6 +1,5 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

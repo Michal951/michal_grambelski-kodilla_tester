@@ -10,6 +10,7 @@ buildscript {
     }
 }
 
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -23,9 +24,6 @@ repositories {
     mavenCentral()
 }
 
-test {
-    useJUnitPlatform()
-}
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter')
     testImplementation('org.springframework.boot:spring-boot-starter-test')

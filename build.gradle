@@ -10,8 +10,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'io.cucumber:cucumber-gherkin:7.2.3'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    implementation 'org.junit:junit-bom:5.8.2'
+    implementation 'com.novocode:junit-interface:0.11'
+    implementation 'io.cucumber:cucumber-plugin:7.2.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 test {

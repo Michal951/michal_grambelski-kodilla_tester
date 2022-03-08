@@ -13,9 +13,7 @@ public class Clock {
 
     private LocalTime localTime;
 
-    public LocalTime getLocalTime(){
+    public LocalTime getlocalTime() {
         return localTime;
     }
-
-
 }

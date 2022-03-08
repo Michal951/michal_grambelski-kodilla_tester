@@ -1,15 +1,21 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
-public class SUV implements Car{
-    private boolean lightsOn;
+import java.time.LocalTime;
 
-    @Override
-    public boolean hasHeadlightsTurnedOn(){
-        return  lightsOn;
-    }
-
+public class SUV implements Car {
     @Override
     public String getTypeCar() {
         return "SUV";
     }
+
+    @Override
+    public boolean hasHeadlightsTurnedOn() {
+        LocalTime now = LocalTime.now();
+        if (now.isAfter(LocalTime.of(20, 0)) && now.isBefore(LocalTime.of(6, 0))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
