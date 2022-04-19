@@ -27,7 +27,7 @@ public class Shop {
         return null;
     }
 
-    public List<Order> getOrdersNotOlderThan2Years() {
+    public List<Order> getOrdersBeetweenTwoDates() {
         List<Order> filterOrders = orders
                 .stream()
                 .filter(o -> Period.between(o.getOrderDate(), LocalDate.now()).getYears() <= 2)

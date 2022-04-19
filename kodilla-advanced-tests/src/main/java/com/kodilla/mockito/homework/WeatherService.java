@@ -9,9 +9,6 @@ import java.util.*;
 public class WeatherService {
     private Map<Location, List<Client>> notifications = new HashMap<>();
 
-    public void addClient(Client client) {
-        clients.add(client);
-    }
 
     public void addCLientToLocation(Location location, Client client) {
         if (notifications.containsKey(location)) {
@@ -21,8 +18,6 @@ public class WeatherService {
             clients.add(client);
             notifications.put(location, clients);
         }
-
-
     }
 
     public void sendNotifications(Notification notification, Location location) {
@@ -34,25 +29,27 @@ public class WeatherService {
     List<Client> clients = new ArrayList<>();
 
     public void sendNotificationsToAllClients(Notification notification) {
-
-        clients.forEach(customer -> customer.receiveNotification(notification));
+        clients.forEach(client -> client.receiveNotification(notification));
     }
 
 
-    public void deleteNotification(Client client, Location location) {
+    public void deleteClientFromAllLocations(Client client) {
+        notifications.values().forEach(customers -> customers.remove(client));
+    }
+
+
+    public void deleteSubscribedLocation(Client client, Location location) {
         if (notifications.containsKey(location)) {
             notifications.get(location).remove(client);
         }
     }
 
-    public void removeClientFromAllLocations(Client client) {
-        notifications.values().forEach(customers -> customers.remove(client));
 
-    }
-
-
-    public void removeLocation(Location location) {
+    public void deleteLocation(Location location) {
         this.notifications.remove(location);
     }
 
+    public void addClient(Client client) {
+        clients.add(client);
+    }
 }

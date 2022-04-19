@@ -1,12 +1,12 @@
 package exercises;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.assertEquals;
 
 class CaclAppTest {
 
-    Caclculator caclculator = new Caclculator();
+        Caclculator caclculator = new Caclculator();
 
     @Test
     public void shoudReturnCorrectSum() {

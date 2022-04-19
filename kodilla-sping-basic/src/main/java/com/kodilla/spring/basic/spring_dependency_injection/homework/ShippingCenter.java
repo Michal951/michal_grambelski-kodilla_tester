@@ -13,6 +13,7 @@ public class ShippingCenter {
     @Autowired
     @Qualifier(value = "deliveryService")
     private DeliveryService deliveryService;
+
     @Resource(name = "notificationService")
     private NotificationService notificationService;
 

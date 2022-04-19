@@ -13,6 +13,7 @@ public class CarConfiguration {
             case "spring":
             case "autumn":
                 car = new Sedan();
+                car.hasHeadlightsTurnedOn();
                 break;
             case "summer":
                 car = new Cabrio();
@@ -20,7 +21,6 @@ public class CarConfiguration {
             case "winter":
                 car = new SUV();
                 break;
-
         }
         return car;
     }

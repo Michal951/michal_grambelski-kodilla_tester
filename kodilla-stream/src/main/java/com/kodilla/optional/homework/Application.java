@@ -17,7 +17,7 @@ public class Application {
         students.add(new Student("Frank ", null));
 
         for (Student student : students) {
-            System.out.println("Name of student: " + student.getName() + " and his teacher is: " + student.getTeacher().orElse(new Teacher("<undefined>")).getName());
+            System.out.println("Name of student: " + student.getName() + " and his teacher is: " + student.getTeacher() +student.getName());
         }
     }
 }
