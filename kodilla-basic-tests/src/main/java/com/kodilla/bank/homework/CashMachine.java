@@ -13,6 +13,7 @@ public class CashMachine {
         return transactions;
     }
 
+
     public void addTransaction(int transaction) {
         this.size++;
         int[] newTab = new int[this.size];
@@ -22,48 +23,33 @@ public class CashMachine {
     }
 
 
-    public double getAverageOfPayments() {
-        if (this.transactions.length == 0) {
-            return 0;
-        } else {
-            double avg = 0;
-            int operation = 0;
-            for (int i = 0; i < this.transactions.length; i++) {
-                if (this.transactions[i] > 0) {
-                    avg += this.transactions[i];
-                    operation += 1;
-                }
+    public int getSumOfPayments() {
+        int paymentsSum = 0;
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] > 0) {
+                paymentsSum += transactions[i];
             }
-            return avg / operation;
         }
+        return paymentsSum;
     }
 
 
-    public double getAverageOfWithdraws() {
-        if (this.transactions.length == 0) {
-            return 0;
-        } else {
-            double average = 0;
-            int operation = 0;
-            for (int i = 0; i < this.transactions.length; i++) {
-                if (this.transactions[i] < 0) {
-                    average += this.transactions[i];
-                    operation += 1;
-                }
+    public int getSumOfWithdraws() {
+        int withdrawalSum = 0;
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] < 0) {
+                withdrawalSum += transactions[i];
             }
-            return average / operation * -1;
         }
+        return withdrawalSum;
     }
+
 
     public int getNumberOfWithdraws() {
         int withdraw = 0;
-        if (this.transactions.length == 0) {
-            return 0;
-        } else {
-            for (int i = 0; i < this.transactions.length; i++) {
-                if (this.transactions[i] < 0) {
-                    withdraw += 1;
-                }
+        for (int i = 0; i < size; i++) {
+            if (transactions[i] < 0) {
+                withdraw++;
             }
         }
         return withdraw;
@@ -71,25 +57,21 @@ public class CashMachine {
 
 
     public int getNumberOfPayments() {
-        int payment = 0;
-        if (this.transactions.length == 0) {
-            return 0;
-        } else {
-            for (int i = 0; i < this.transactions.length; i++) {
-                if (this.transactions[i] > 0) {
-                    payment += 1;
-                }
+        int payments = 0;
+        for (int i = 0; i < size; i++) {
+            if (transactions[i] > 0) {
+                payments++;
             }
         }
-        return payment;
+        return payments;
     }
 
 
     public int saldo() {
-        int sum = 0;
+        int saldo = 0;
         for (int i = 0; i < transactions.length; i++) {
-            sum += transactions[i];
+            saldo += transactions[i];
         }
-        return sum;
+        return saldo;
     }
 }

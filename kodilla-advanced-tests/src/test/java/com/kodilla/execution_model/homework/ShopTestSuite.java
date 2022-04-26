@@ -17,7 +17,7 @@ class ShopTestSuite {
     Order drums = new Order(3000, LocalDate.of(2023, 4, 23), "Ochocki");
 
     @BeforeEach
-   void addOrdersToShop(){
+    void addOrdersToShop() {
         shop.addOrder(guitar);
         shop.addOrder(bassGuitar);
         shop.addOrder(microphone);
@@ -25,16 +25,15 @@ class ShopTestSuite {
     }
 
     @Test
-    void shoudAddOrder(){
+    void shoudAddOrder() {
         int numberOfOrders = shop.getOrderSize();
-        assertEquals(4,numberOfOrders);
+        assertEquals(4, numberOfOrders);
     }
 
     @Test
-    void shouldReturnSumOfAllOrders(){
-double result = shop.getSum();
-assertEquals(8199, result);
+    void shouldReturnSumOfAllOrders() {
+        double result = shop.getSum();
+        assertEquals(8199, result);
 
     }
-
 }

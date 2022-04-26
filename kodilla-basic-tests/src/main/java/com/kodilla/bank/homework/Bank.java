@@ -1,61 +1,69 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    static int payments;
-    static int numberOfPayments;
-    static int withdraws;
-    static int numberOfWithdraws;
-    CashMachine transaction;
+    private CashMachine[] cashMachines;
+    private int size;
 
-    public void addTransaction(int transactions) {
-        this.transaction.addTransaction(transactions);
-        if (transactions > 0) {
-            payments += transactions;
-            numberOfPayments++;
-        } else if (transactions < 0) {
-            withdraws += transactions;
-            numberOfWithdraws++;
-        }
+    public Bank() {
+
+        this.cashMachines = new CashMachine[0];
+        this.size = 0;
     }
 
-    public int[] numberOfTransaction() {
-        return this.transaction.getTransactions();
+    public void add(CashMachine cashMachine) {
+        this.size++;
+        CashMachine[] newTab = new CashMachine[this.size];
+        System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);
+        newTab[this.size - 1] = cashMachine;
+        this.cashMachines = newTab;
+
     }
+
 
     public int saldo() {
-        return this.transaction.saldo();
+        int saldo = 0;
+        for (int i = 0; i < size; i++) {
+            saldo += cashMachines[i].saldo();
+        }
+        return saldo;
     }
+
+
+    public int numberOfWithrdrals() {
+        int numberofWithdrawals = 0;
+        for (int i = 0; i < size; i++) {
+            numberofWithdrawals += cashMachines[i].getNumberOfWithdraws();
+        }
+        return numberofWithdrawals;
+    }
+
 
     public int numberOfPayments() {
-        return this.transaction.getNumberOfPayments();
+        int numberOfPayments = 0;
+        for (int i = 0; i < size; i++) {
+            numberOfPayments += cashMachines[i].getNumberOfPayments();
+        }
+        return numberOfPayments;
     }
 
 
-    public double numberOfWithdraws() {
-        return this.transaction.getNumberOfWithdraws();
+    public int averageOfWithdraws() {
+        int average = 0;
+        int size = 0;
+        for (int i = 0; i < size; i++) {
+            average += cashMachines[i].saldo();
+            size += cashMachines[i].getSumOfWithdraws();
+        }
+        return average / size;
     }
 
-    public double averageOfPayment() {
-        return this.transaction.getAverageOfPayments();
-    }
-
-    public double averageofWithdraws() {
-        return this.transaction.getAverageOfWithdraws();
-    }
-
-    public static double averageOfEveryPayments() {
-        if (numberOfPayments == 0)
-            return 0;
-        else
-            return payments / numberOfPayments;
-
-    }
-
-    public static double averageOfEveryWithdraws() {
-        if (numberOfWithdraws == 0)
-            return 0;
-        else
-            return withdraws / numberOfWithdraws;
-
+    public int averageOfPayments() {
+        int average = 0;
+        int size = 0;
+        for (int i = 0; i < size; i++) {
+            average += cashMachines[i].saldo();
+            size += cashMachines[i].getSumOfPayments();
+        }
+        return average / size;
     }
 }
