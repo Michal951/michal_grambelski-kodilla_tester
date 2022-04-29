@@ -36,4 +36,13 @@ class ShopTestSuite {
         assertEquals(8199, result);
 
     }
+
+    @Test
+    public void shouldReturnOrdersFromTwoDates() {
+        List<Order> expected = new ArrayList<>();
+        expected.add( bassGuitar);
+        List<Order> result = shop.getOrdersBeetweenTwoDates(LocalDate.of(2021,2,13), LocalDate.of(2021,2,14));
+        assertEquals(expected, result);
+    }
+
 }

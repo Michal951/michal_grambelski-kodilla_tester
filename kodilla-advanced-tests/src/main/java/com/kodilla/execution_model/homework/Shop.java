@@ -27,7 +27,7 @@ public class Shop {
         return null;
     }
 
-    public List<Order> getOrdersBeetweenTwoDates() {
+    public List<Order> getOrdersBeetweenTwoDates(LocalDate date1, LocalDate date2) {
         List<Order> filterOrders = orders
                 .stream()
                 .filter(o -> Period.between(o.getOrderDate(), LocalDate.now()).getYears() <= 2)
@@ -44,6 +44,7 @@ public class Shop {
                 .sum();
         return sum;
     }
+
     public List<Order> getOrdersByPrice(double minPrice, double maxPrice) {
         List<Order> foundOrders = orders.stream()
                 .filter(order -> order.getValue() > minPrice && order.getValue() < maxPrice)
