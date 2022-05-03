@@ -16,17 +16,21 @@ public class Order {
         this.login = login;
     }
 
+
     public double getValue() {
         return value;
     }
+
 
     public LocalDate getOrderDate() {
         return OrderDate;
     }
 
+
     public String getLogin() {
         return login;
     }
+
 
     @Override
     public String toString() {
