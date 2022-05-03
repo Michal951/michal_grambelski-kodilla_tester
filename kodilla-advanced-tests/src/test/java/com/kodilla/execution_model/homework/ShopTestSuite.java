@@ -4,8 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,6 +14,7 @@ class ShopTestSuite {
     Order microphone = new Order(1000, LocalDate.of(2020, 3, 17), "Suzin");
     Order drums = new Order(3000, LocalDate.of(2023, 4, 23), "Ochocki");
 
+
     @BeforeEach
     void addOrdersToShop() {
         shop.addOrder(guitar);
@@ -24,25 +23,35 @@ class ShopTestSuite {
         shop.addOrder(drums);
     }
 
-    @Test
-    void shoudAddOrder() {
-        int numberOfOrders = shop.getOrderSize();
-        assertEquals(4, numberOfOrders);
-    }
 
     @Test
-    void shouldReturnSumOfAllOrders() {
-        double result = shop.getSum();
-        assertEquals(8199, result);
-
+    void returnSumOfAllOrders() {
+        assertEquals(8199, shop.getSum());
     }
+
 
     @Test
-    public void shouldReturnOrdersFromTwoDates() {
-        List<Order> expected = new ArrayList<>();
-        expected.add( bassGuitar);
-        List<Order> result = shop.getOrdersBeetweenTwoDates(LocalDate.of(2021,2,13), LocalDate.of(2021,2,14));
-        assertEquals(expected, result);
+    void returnOrdersNumber() {
+        assertEquals(4, shop.getOrderSize());
     }
 
+
+    @Test
+    void returnOrderListByDates() {
+        assertEquals(3, shop.getOrdersBeetweenTwoDates(LocalDate.of(2021, 2, 13),
+                LocalDate.of(2021, 3, 17)).size());
+    }
+
+
+    @Test
+    public void returnNullWhenPassingOutOfRangeIndex() {
+        Order result = shop.getOrder(9);
+        assertNull(result);
+    }
+
+
+    @Test
+    void returnOrderListWithGivenValueRange() {
+        assertEquals(1699, shop.getOrdersByPrice(1000, 2000).get(0).getValue());
+    }
 }

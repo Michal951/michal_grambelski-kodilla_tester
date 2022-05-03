@@ -20,5 +20,4 @@ public class Student {
         Teacher result = optionalTeacher.orElse(new Teacher("<undifined>"));
         return result.getName();
     }
-
 }

@@ -7,25 +7,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Shop {
-
     private List<Order> orders = new ArrayList<>();
-
 
     public void addOrder(Order order) {
         this.orders.add(order);
     }
 
+
     public int getOrderSize() {
         return this.orders.size();
     }
 
-
-    public Order getOrder(int index) {
-        if (index >= 0 && index < orders.size()) {
-            return this.orders.get(index);
-        }
-        return null;
-    }
 
     public List<Order> getOrdersBeetweenTwoDates(LocalDate date1, LocalDate date2) {
         List<Order> filterOrders = orders
@@ -45,13 +37,22 @@ public class Shop {
         return sum;
     }
 
+
     public List<Order> getOrdersByPrice(double minPrice, double maxPrice) {
-        List<Order> foundOrders = orders.stream()
-                .filter(order -> order.getValue() > minPrice && order.getValue() < maxPrice)
-                .collect(Collectors.toList());
-        if (foundOrders.size() > 0)
-            return foundOrders;
-        else
-            return null;
+        List<Order> ordersByPrice = new ArrayList<>();
+        for (Order order : orders) {
+            if (minPrice < order.getValue() && order.getValue() < maxPrice) {
+                ordersByPrice.add(order);
+            }
+        }
+        return ordersByPrice;
+    }
+
+
+    public Order getOrder(int index) {
+        if (index >= 0 && index < orders.size()) {
+            return this.orders.get(index);
+        }
+        return null;
     }
 }

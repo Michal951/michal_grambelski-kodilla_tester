@@ -10,22 +10,20 @@ class WeatherServiceTest {
     Location location = Mockito.mock(Location.class);
     Notification notification = Mockito.mock(Notification.class);
 
-
     @Test
     public void unsubscribedClientShouldNotReceiveNotification() {
         weatherService.addClient(client);
         weatherService.deleteClientFromAllLocations(client);
-
         weatherService.sendNotifications(notification, location);
+
         Mockito.verify(client, Mockito.never()).receiveNotification(notification);
     }
-
 
     @Test
     public void subscribedClientShouldReceiveNotification() {
         weatherService.addClient(client);
-
         weatherService.sendNotifications(notification, location);
+        
         Mockito.verify(client, Mockito.times(1)).receiveNotification(notification);
     }
 
@@ -38,7 +36,6 @@ class WeatherServiceTest {
 
         weatherService.sendNotifications(notification, location1);
         Mockito.verify(client, Mockito.never()).receiveNotification(notification);
-
     }
 
     @Test
@@ -49,11 +46,9 @@ class WeatherServiceTest {
         weatherService.addClient(client1);
         weatherService.addClient(client2);
 
-
         weatherService.sendNotificationsToAllClients(notification);
         Mockito.verify(client1, Mockito.times(1)).receiveNotification(notification);
         Mockito.verify(client2, Mockito.times(1)).receiveNotification(notification);
-
     }
 
     @Test
@@ -64,10 +59,8 @@ class WeatherServiceTest {
         weatherService.deleteClientFromAllLocations(client);
         weatherService.deleteSubscribedLocation(client,location);
 
-
         weatherService.sendNotifications(notification, location);
         weatherService.sendNotifications(notification, location1);
         Mockito.verify(client, Mockito.never()).receiveNotification(notification);
-
     }
 }
