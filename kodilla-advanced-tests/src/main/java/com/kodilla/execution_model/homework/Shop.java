@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class Shop {
     private List<Order> orders = new ArrayList<>();
 
+
     public void addOrder(Order order) {
         this.orders.add(order);
     }
